@@ -1,0 +1,19 @@
+<%= link_to 'Home', root_path, class: 'btn btn-primary' %>
+
+<h1><%= @weather_data["name"] %><small><%= @weather_data["coord"]["lon"] %> / <%= @weather_data["coord"]["lat"] %></small></h1>
+
+
+<h3>Weather</h3>
+<% @weather_data["weather"].each do |weather_row| %>
+  <p><strong><%= weather_row["main"] %>: </strong><%= weather_row["description"] %></p>
+<% end %>
+
+<h3>Temp (Kelvin)</h3>
+<p><%= @weather_data["main"]["temp"] %></p>
+<p>Low: <%= @weather_data["main"]["temp_min"] %></p>
+<p>High: <%= @weather_data["main"]["temp_max"] %></p>
+
+<h3>Wind Speed: <%= @weather_data["wind"]["speed"] %></h3>
+
+
+<%= @weather_data.inspect %>

@@ -1,0 +1,13 @@
+
+<h1>Find The Weather</h1>
+
+<%= form_tag search_path, method: :GET do %>
+  <div class='row'>
+    <div class='col-md-4'>
+      <%= search_field_tag :query, '', placeholder: 'Type an Address', class: 'form-control' %>
+    </div>
+    <div class='col-md-8'>
+      <%= submit_tag 'Search', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
